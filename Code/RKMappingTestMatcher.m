@@ -38,7 +38,7 @@ extern BOOL RKValueIsEqualToValue(id sourceValue, id destinationValue);
     return [NSArray arrayWithObjects:
             @"mapKeyPath:toKeyPath:",
             @"mapKeyPath:toKeyPath:withValue:",
-            @"mapKeyPath:toKeyPath:usingMapping:(RKMapping *)mapping",
+            @"mapKeyPath:toKeyPath:usingMapping:",
             @"mapKeyPath:toKeyPath:passingEvaluationBlock:",
             @"mapAttribute:withValue:",
             @"mapRelationship:usingMapping:",
