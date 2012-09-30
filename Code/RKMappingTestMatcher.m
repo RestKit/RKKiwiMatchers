@@ -20,13 +20,14 @@
 
 #import "RKMappingTestMatcher.h"
 #import "RKConnectionMapping.h"
+#import "RKObjectUtilities.h"
 
 @interface RKMappingTestMatcher ()
 @property (nonatomic, strong) NSError *error;
 @property (nonatomic, strong) RKMappingTestExpectation *expectation;
 @end
 
-extern BOOL RKValueIsEqualToValue(id sourceValue, id destinationValue);
+extern BOOL RKObjectIsEqualToObject(id sourceValue, id destinationValue);
 
 @implementation RKMappingTestMatcher
 
@@ -102,7 +103,18 @@ extern BOOL RKValueIsEqualToValue(id sourceValue, id destinationValue);
         // Wrong objects
         if (expectedValue) RKMappingTestExpectationTestCondition(mappedValue, error, @"unexpectedly connected to nil object set (%@)", mappedValue);
         if (expectedValue == nil) RKMappingTestExpectationTestCondition(mappedValue == nil, error, @"unexpectedly connected to non-nil object set (%@)", mappedValue);
-        RKMappingTestExpectationTestCondition(RKValueIsEqualToValue(mappedValue, expectedValue), error, @"connected to unexpected %@ value '%@'", [mappedValue class], mappedValue);
+        
+        if ([mappedValue isKindOfClass:[NSManagedObject class]] && [expectedValue isKindOfClass:[NSManagedObject class]]) {
+            // Do a managed object ID comparison
+            RKMappingTestExpectationTestCondition([[mappedValue objectID] isEqual:[expectedValue objectID]], error, @"connected to unexpected managed object: %@", expectedValue);
+        } else {
+            // If we are connecting to a collection of managed objects, do a comparison of object IDs
+            if (RKObjectIsCollectionContainingOnlyManagedObjects(mappedValue) && RKObjectIsCollectionContainingOnlyManagedObjects(expectedValue)) {
+                RKMappingTestExpectationTestCondition(RKObjectIsEqualToObject([mappedValue valueForKeyPath:@"objectID"], [expectedValue valueForKeyPath:@"objectID"]), error, @"connected to unexpected %@ value '%@'", [mappedValue class], mappedValue);
+            } else {
+                RKMappingTestExpectationTestCondition(RKObjectIsEqualToObject(mappedValue, expectedValue), error, @"connected to unexpected %@ value '%@'", [mappedValue class], mappedValue);
+            }
+        }
         
         return YES;
     }];
