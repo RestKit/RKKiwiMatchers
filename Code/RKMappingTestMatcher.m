@@ -92,6 +92,9 @@ extern BOOL RKObjectIsEqualToObject(id sourceValue, id destinationValue);
 
 - (void)connectRelationship:(NSString *)relationshipName fromKeyPath:(NSString *)sourceKeyPath toKeyPath:(NSString *)destinationKeyPath withValue:(id)expectedValue
 {
+    NSAssert(expectedValue == nil ||
+             [expectedValue isKindOfClass:[NSManagedObject class]] ||
+             RKObjectIsCollectionContainingOnlyManagedObjects(expectedValue), @"Can only expect a connection to `nil`, a `NSManagedObject`, or a collection of `NSManagedObject` objects");
     self.expectation = [RKMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath evaluationBlock:^BOOL(RKMappingTestExpectation *expectation, RKPropertyMapping *mapping, id mappedValue, NSError *__autoreleasing *error) {
         // Mapping mismatch
         RKMappingTestExpectationTestCondition([mapping isKindOfClass:[RKConnectionMapping class]], error, @"expected a property mapping of type `RKConnectionMapping` but instead got a `%@`", [mapping class]);
