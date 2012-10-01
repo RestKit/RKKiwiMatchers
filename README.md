@@ -37,6 +37,7 @@ context(@"when object mapping a GGAirline", ^{
     specify(^{ [[mappingTest should] mapKeyPath:@"code" toKeyPath:@"code" withValue:@"DL"]; });
     specify(^{ [[mappingTest should] mapKeyPath:@"name" toKeyPath:@"name" withValue:@"Delta Air Lines"]; });
     specify(^{ [[mappingTest should] mapKeyPath:@"favorite" toKeyPath:@"favorite" withValue:@NO]; });
+    specify(^{ [[mappingTest should] mapKeyPath:@"created_at" toKeyPath:@"createdAt" withValue:RKDateFromString(@"2012-01-07T12:00:00Z")]; });
 });
 
 ```
