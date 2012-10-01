@@ -33,11 +33,22 @@ context(@"when object mapping a GGAirline", ^{
         mappingTest.rootKeyPath = @"airline";
     });
 
+	// Attributes
     specify(^{ [[mappingTest should] mapKeyPath:@"id" toKeyPath:@"airlineID" withValue:@1234]; });
     specify(^{ [[mappingTest should] mapKeyPath:@"code" toKeyPath:@"code" withValue:@"DL"]; });
     specify(^{ [[mappingTest should] mapKeyPath:@"name" toKeyPath:@"name" withValue:@"Delta Air Lines"]; });
     specify(^{ [[mappingTest should] mapKeyPath:@"favorite" toKeyPath:@"favorite" withValue:@NO]; });
     specify(^{ [[mappingTest should] mapKeyPath:@"created_at" toKeyPath:@"createdAt" withValue:RKDateFromString(@"2012-01-07T12:00:00Z")]; });
+    
+    // Relationships
+    specify(^{ [[mappingTest should] mapKeyPath:@"terminals" toKeyPath:@"terminals" usingMapping:[mappings terminalResponseMapping]]; });
+    
+    // Connect to the Airports this Airline operates out of
+    specify(^{
+        NSManagedObject *managedObject = [RKTestFactory insertManagedObjectForEntityForName:@"Airport" inManagedObjectContext:nil withProperties:@{@"airportID" : @12345}];
+        [managedObject.managedObjectContext saveToPersistentStore:nil];
+        [[mappingTest should] connectRelationship:@"airports" fromKeyPath:@"airportIDs" toKeyPath:@"airportID" withValue:managedObject];
+    });
 });
 
 ```
