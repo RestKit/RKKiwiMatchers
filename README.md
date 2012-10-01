@@ -47,5 +47,5 @@ RKKiwiMatchers is available under the terms of the Apache2 license. See the LICE
 
 ## Credits
 
-[Blake Watters](http://github.com/blakewatters)
-[Blake Watters](https://twitter.com/blakewatters)
+[Blake Watters](http://github.com/blakewatters)  
+[@blakewatters](https://twitter.com/blakewatters)
