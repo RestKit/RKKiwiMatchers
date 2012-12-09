@@ -8,6 +8,11 @@ This project provides a set of matchers for use in testing the RestKit framework
 Recommended installation is via Cocoapods:
 
 ```ruby
+# Link RestKit and testing support into Application Target
+pod 'RestKit', '0.20.0'
+pod 'RestKit/Testing', '0.20.0'
+
+# Link Kiwi and the matchers into the Unit Test Bundle Target
 target :test, :exclusive => true do
   pod 'RKKiwiMatchers'
   pod 'Kiwi', '1.1.0'
@@ -47,7 +52,7 @@ context(@"when object mapping a GGAirline", ^{
     specify(^{
         NSManagedObject *managedObject = [RKTestFactory insertManagedObjectForEntityForName:@"Airport" inManagedObjectContext:nil withProperties:@{@"airportID" : @12345}];
         [managedObject.managedObjectContext saveToPersistentStore:nil];
-        [[mappingTest should] connectRelationship:@"airports" fromKeyPath:@"airportIDs" toKeyPath:@"airportID" withValue:managedObject];
+        [[mappingTest should] connectRelationship:@"airports" usingAttributes:@{ @"airportIDs": @"airportID" } withValue:managedObject];
     });
 });
 

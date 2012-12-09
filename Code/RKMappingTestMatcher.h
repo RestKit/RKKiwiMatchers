@@ -103,16 +103,14 @@
 - (void)mapRelationship:(NSString *)relationshipName usingMapping:(RKMapping *)mapping;
 
 /**
- Sets an expectation that the relationship with the given name will be connected to related entities with the given value for the primary key attribute.
+ Sets an expectation that the relationship with the given name will be connected to related entities using the specified connection attributes.
  
  @param relationshipName The name of the relationship to be connected.
- @param sourceKeyPath The key path on the source object representation from which the mapped value is expected to be read.
- @param destinationKeyPath The key path on the destination object representation at which the mapped value is expected to be set.
+ @param connectionAttributes The key path on the source object representation from which the mapped value is expected to be read.
  @param expectedValue The value of the destination key path for entities that are to be connected to object under test.
  */
 - (void)connectRelationship:(NSString *)relationshipName
-                fromKeyPath:(NSString *)sourceKeyPath
-                  toKeyPath:(NSString *)destinationKeyPath
+            usingAttributes:(NSDictionary *)connectionAttributes
                   withValue:(id)expectedValue;
 
 @end

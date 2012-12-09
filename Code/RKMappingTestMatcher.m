@@ -19,12 +19,11 @@
 //
 
 #import "RKMappingTestMatcher.h"
-#import "RKConnectionMapping.h"
-#import "RKObjectUtilities.h"
+#import "RKConnectionTestExpectation.h"
 
 @interface RKMappingTestMatcher ()
 @property (nonatomic, strong) NSError *error;
-@property (nonatomic, strong) RKMappingTestExpectation *expectation;
+@property (nonatomic, strong) id expectation;
 @end
 
 extern BOOL RKObjectIsEqualToObject(id sourceValue, id destinationValue);
@@ -39,11 +38,11 @@ extern BOOL RKObjectIsEqualToObject(id sourceValue, id destinationValue);
     return [NSArray arrayWithObjects:
             @"mapKeyPath:toKeyPath:",
             @"mapKeyPath:toKeyPath:withValue:",
+            @"mapKeyPath:toKeyPath:passingTest:",
             @"mapKeyPath:toKeyPath:usingMapping:",
-            @"mapKeyPath:toKeyPath:passingEvaluationBlock:",
             @"mapAttribute:withValue:",
             @"mapRelationship:usingMapping:",
-            @"connectRelationship:fromKeyPath:toKeyPath:withValue:",
+            @"connectRelationship:usingAttributes:withValue:",
             nil];
 }
 
@@ -62,65 +61,39 @@ extern BOOL RKObjectIsEqualToObject(id sourceValue, id destinationValue);
 
 - (void)mapKeyPath:(NSString *)sourceKeyPath toKeyPath:(NSString *)destinationKeyPath
 {
-    self.expectation = [RKMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath];
+    self.expectation = [RKPropertyMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath];
 }
 
 - (void)mapKeyPath:(NSString *)sourceKeyPath toKeyPath:(NSString *)destinationKeyPath withValue:(id)value
 {
-    self.expectation = [RKMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath value:value];
+    self.expectation = [RKPropertyMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath value:value];
 }
 
 - (void)mapKeyPath:(NSString *)sourceKeyPath toKeyPath:(NSString *)destinationKeyPath usingMapping:(RKMapping *)mapping
 {
-    self.expectation = [RKMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath mapping:mapping];
+    self.expectation = [RKPropertyMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath mapping:mapping];
 }
 
 - (void)mapKeyPath:(NSString *)sourceKeyPath toKeyPath:(NSString *)destinationKeyPath passingTest:(RKMappingTestExpectationEvaluationBlock)evaluationBlock
 {
-    self.expectation = [RKMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath evaluationBlock:evaluationBlock];
+    self.expectation = [RKPropertyMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath evaluationBlock:evaluationBlock];
 }
 
 - (void)mapAttribute:(NSString *)attributeName withValue:(id)expectedValue
 {
-    self.expectation = [RKMappingTestExpectation expectationWithSourceKeyPath:attributeName destinationKeyPath:attributeName value:expectedValue];
+    self.expectation = [RKPropertyMappingTestExpectation expectationWithSourceKeyPath:attributeName destinationKeyPath:attributeName value:expectedValue];
 }
 
 - (void)mapRelationship:(NSString *)relationshipName usingMapping:(RKMapping *)mapping
 {
-    self.expectation = [RKMappingTestExpectation expectationWithSourceKeyPath:relationshipName destinationKeyPath:relationshipName mapping:mapping];
+    self.expectation = [RKPropertyMappingTestExpectation expectationWithSourceKeyPath:relationshipName destinationKeyPath:relationshipName mapping:mapping];
 }
 
-- (void)connectRelationship:(NSString *)relationshipName fromKeyPath:(NSString *)sourceKeyPath toKeyPath:(NSString *)destinationKeyPath withValue:(id)expectedValue
-{
-    NSAssert(expectedValue == nil ||
-             [expectedValue isKindOfClass:[NSManagedObject class]] ||
-             RKObjectIsCollectionContainingOnlyManagedObjects(expectedValue), @"Can only expect a connection to `nil`, a `NSManagedObject`, or a collection of `NSManagedObject` objects");
-    self.expectation = [RKMappingTestExpectation expectationWithSourceKeyPath:sourceKeyPath destinationKeyPath:destinationKeyPath evaluationBlock:^BOOL(RKMappingTestExpectation *expectation, RKPropertyMapping *mapping, id mappedValue, NSError *__autoreleasing *error) {
-        // Mapping mismatch
-        RKMappingTestExpectationTestCondition([mapping isKindOfClass:[RKConnectionMapping class]], error, @"expected a property mapping of type `RKConnectionMapping` but instead got a `%@`", [mapping class]);
-        
-        // Wrong relationship
-        RKConnectionMapping *connectionMapping = (RKConnectionMapping *)mapping;
-        RKMappingTestExpectationTestCondition([connectionMapping.relationship.name isEqualToString:relationshipName], error, @"Expected to the connect the relationship named '%@', but instead connected '%@'", relationshipName, connectionMapping.relationship.name);
-        
-        // Wrong objects
-        if (expectedValue) RKMappingTestExpectationTestCondition(mappedValue, error, @"unexpectedly connected to nil object set (%@)", mappedValue);
-        if (expectedValue == nil) RKMappingTestExpectationTestCondition(mappedValue == nil, error, @"unexpectedly connected to non-nil object set (%@)", mappedValue);
-        
-        if ([mappedValue isKindOfClass:[NSManagedObject class]] && [expectedValue isKindOfClass:[NSManagedObject class]]) {
-            // Do a managed object ID comparison
-            RKMappingTestExpectationTestCondition([[mappedValue objectID] isEqual:[expectedValue objectID]], error, @"connected to unexpected managed object: %@", expectedValue);
-        } else {
-            // If we are connecting to a collection of managed objects, do a comparison of object IDs
-            if (RKObjectIsCollectionContainingOnlyManagedObjects(mappedValue) && RKObjectIsCollectionContainingOnlyManagedObjects(expectedValue)) {
-                RKMappingTestExpectationTestCondition(RKObjectIsEqualToObject([mappedValue valueForKeyPath:@"objectID"], [expectedValue valueForKeyPath:@"objectID"]), error, @"connected to unexpected %@ value '%@'", [mappedValue class], mappedValue);
-            } else {
-                RKMappingTestExpectationTestCondition(RKObjectIsEqualToObject(mappedValue, expectedValue), error, @"connected to unexpected %@ value '%@'", [mappedValue class], mappedValue);
-            }
-        }
-        
-        return YES;
-    }];
+- (void)connectRelationship:(NSString *)relationshipName
+            usingAttributes:(NSDictionary *)connectionAttributes
+                  withValue:(id)expectedValue
+{    
+    self.expectation = [[RKConnectionTestExpectation alloc] initWithRelationshipName:relationshipName attributes:connectionAttributes value:expectedValue];
 }
 
 - (NSString *)description
