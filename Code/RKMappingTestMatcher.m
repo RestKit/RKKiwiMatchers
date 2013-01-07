@@ -89,12 +89,16 @@ extern BOOL RKObjectIsEqualToObject(id sourceValue, id destinationValue);
     self.expectation = [RKPropertyMappingTestExpectation expectationWithSourceKeyPath:relationshipName destinationKeyPath:relationshipName mapping:mapping];
 }
 
+#ifdef _COREDATADEFINES_H
+
 - (void)connectRelationship:(NSString *)relationshipName
             usingAttributes:(NSDictionary *)connectionAttributes
                   withValue:(id)expectedValue
 {    
     self.expectation = [[RKConnectionTestExpectation alloc] initWithRelationshipName:relationshipName attributes:connectionAttributes value:expectedValue];
 }
+
+#endif // _COREDATADEFINES_H
 
 - (NSString *)description
 {

@@ -102,6 +102,8 @@
  */
 - (void)mapRelationship:(NSString *)relationshipName usingMapping:(RKMapping *)mapping;
 
+#ifdef _COREDATADEFINES_H
+
 /**
  Sets an expectation that the relationship with the given name will be connected to related entities using the specified connection attributes.
  
@@ -112,5 +114,7 @@
 - (void)connectRelationship:(NSString *)relationshipName
             usingAttributes:(NSDictionary *)connectionAttributes
                   withValue:(id)expectedValue;
+
+#endif // _COREDATADEFINES_H
 
 @end
