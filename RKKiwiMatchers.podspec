@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.0'
   s.requires_arc = true
   
-  s.source       = { :git => "https://github.com/RestKit/RKKiwiMatchers.git", :branch => 'master' }
+  s.source       = { :git => "https://github.com/RestKit/RKKiwiMatchers.git", :tag => '0.20.0' }
   s.source_files = 'Code/*.{h,m}'
   
   # NOTE: The RestKit dependency is not specified within the Podspec because this pod is designed to be exclusively linked into the unit testing bundle target. Directly specifying RestKit causes the compilation of a secondary copy of the library.

@@ -9,13 +9,13 @@ Recommended installation is via Cocoapods:
 
 ```ruby
 # Link RestKit and testing support into Application Target
-pod 'RestKit', '0.20.0'
-pod 'RestKit/Testing', '0.20.0'
+pod 'RestKit', '~> 0.20.0'
+pod 'RestKit/Testing', '~> 0.20.0'
 
 # Link Kiwi and the matchers into the Unit Test Bundle Target
 target :test, :exclusive => true do
   pod 'RKKiwiMatchers'
-  pod 'Kiwi', '1.1.0'
+  pod 'Kiwi', '~> 2.0.0'
 end
 ```
 
