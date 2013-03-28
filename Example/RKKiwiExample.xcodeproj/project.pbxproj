@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		253371F41703DA5800496B3C /* RKKiwiExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 253371F21703DA5800496B3C /* RKKiwiExample.xcdatamodeld */; };
+		253371F71703DBAE00496B3C /* RKTestFactory+GGEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 253371F61703DBAE00496B3C /* RKTestFactory+GGEAdditions.m */; };
+		253371FA1703DDB200496B3C /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 253371F91703DDB200496B3C /* Contact.m */; };
+		253371FD1703DDB300496B3C /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 253371FC1703DDB300496B3C /* Tag.m */; };
+		253371FF1703DFFE00496B3C /* contact.json in Resources */ = {isa = PBXBuildFile; fileRef = 253371FE1703DFFE00496B3C /* contact.json */; };
+		253372011703E01500496B3C /* ContactSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 253372001703E01500496B3C /* ContactSpec.m */; };
+		25A26A0A1673A6D500E3EFA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A26A091673A6D500E3EFA8 /* UIKit.framework */; };
+		25A26A0C1673A6D500E3EFA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A26A0B1673A6D500E3EFA8 /* Foundation.framework */; };
+		25A26A0E1673A6D500E3EFA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A26A0D1673A6D500E3EFA8 /* CoreGraphics.framework */; };
+		25A26A101673A6D500E3EFA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A26A0F1673A6D500E3EFA8 /* CoreData.framework */; };
+		25A26A161673A6D500E3EFA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25A26A141673A6D500E3EFA8 /* InfoPlist.strings */; };
+		25A26A181673A6D500E3EFA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A26A171673A6D500E3EFA8 /* main.m */; };
+		25A26A1C1673A6D500E3EFA8 /* RKKEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A26A1B1673A6D500E3EFA8 /* RKKEAppDelegate.m */; };
+		25A26A1E1673A6D500E3EFA8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A26A1D1673A6D500E3EFA8 /* Default.png */; };
+		25A26A201673A6D500E3EFA8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A26A1F1673A6D500E3EFA8 /* Default@2x.png */; };
+		25A26A221673A6D500E3EFA8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A26A211673A6D500E3EFA8 /* Default-568h@2x.png */; };
+		25A26A2D1673A6D500E3EFA8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A26A2C1673A6D500E3EFA8 /* SenTestingKit.framework */; };
+		25A26A2E1673A6D500E3EFA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A26A091673A6D500E3EFA8 /* UIKit.framework */; };
+		25A26A2F1673A6D500E3EFA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A26A0B1673A6D500E3EFA8 /* Foundation.framework */; };
+		25A26A301673A6D500E3EFA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A26A0F1673A6D500E3EFA8 /* CoreData.framework */; };
+		25A26A381673A6D500E3EFA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25A26A361673A6D500E3EFA8 /* InfoPlist.strings */; };
+		2E9986140DD24541AE53FCA1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D067EA4A261E4BA594F06516 /* libPods.a */; };
+		7CE5D69FD26846E1A35FF24F /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EDBCAEAFD249BDB3291443 /* libPods-test.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		25A26A311673A6D500E3EFA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25A269FC1673A6D500E3EFA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25A26A041673A6D500E3EFA8;
+			remoteInfo = RKKiwiExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		253371F31703DA5800496B3C /* RKKiwiExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RKKiwiExample.xcdatamodel; sourceTree = "<group>"; };
+		253371F61703DBAE00496B3C /* RKTestFactory+GGEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RKTestFactory+GGEAdditions.m"; sourceTree = "<group>"; };
+		253371F81703DDB200496B3C /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		253371F91703DDB200496B3C /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		253371FB1703DDB300496B3C /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		253371FC1703DDB300496B3C /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		253371FE1703DFFE00496B3C /* contact.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = contact.json; path = RKKiwiExampleTests/contact.json; sourceTree = SOURCE_ROOT; };
+		253372001703E01500496B3C /* ContactSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactSpec.m; sourceTree = "<group>"; };
+		25A26A051673A6D500E3EFA8 /* RKKiwiExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RKKiwiExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A26A091673A6D500E3EFA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		25A26A0B1673A6D500E3EFA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		25A26A0D1673A6D500E3EFA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		25A26A0F1673A6D500E3EFA8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		25A26A131673A6D500E3EFA8 /* RKKiwiExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RKKiwiExample-Info.plist"; sourceTree = "<group>"; };
+		25A26A151673A6D500E3EFA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		25A26A171673A6D500E3EFA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		25A26A191673A6D500E3EFA8 /* RKKiwiExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RKKiwiExample-Prefix.pch"; sourceTree = "<group>"; };
+		25A26A1A1673A6D500E3EFA8 /* RKKEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKKEAppDelegate.h; sourceTree = "<group>"; };
+		25A26A1B1673A6D500E3EFA8 /* RKKEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKKEAppDelegate.m; sourceTree = "<group>"; };
+		25A26A1D1673A6D500E3EFA8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		25A26A1F1673A6D500E3EFA8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		25A26A211673A6D500E3EFA8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		25A26A2B1673A6D500E3EFA8 /* RKKiwiExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RKKiwiExampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A26A2C1673A6D500E3EFA8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		25A26A351673A6D500E3EFA8 /* RKKiwiExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RKKiwiExampleTests-Info.plist"; sourceTree = "<group>"; };
+		25A26A371673A6D500E3EFA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5D9543E0748248D7B7933EFA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		C2EDBCAEAFD249BDB3291443 /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D067EA4A261E4BA594F06516 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E10A11652B6241488D96BEEC /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25A26A021673A6D500E3EFA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A26A0A1673A6D500E3EFA8 /* UIKit.framework in Frameworks */,
+				25A26A0C1673A6D500E3EFA8 /* Foundation.framework in Frameworks */,
+				25A26A0E1673A6D500E3EFA8 /* CoreGraphics.framework in Frameworks */,
+				25A26A101673A6D500E3EFA8 /* CoreData.framework in Frameworks */,
+				2E9986140DD24541AE53FCA1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A26A271673A6D500E3EFA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A26A2D1673A6D500E3EFA8 /* SenTestingKit.framework in Frameworks */,
+				25A26A2E1673A6D500E3EFA8 /* UIKit.framework in Frameworks */,
+				25A26A2F1673A6D500E3EFA8 /* Foundation.framework in Frameworks */,
+				25A26A301673A6D500E3EFA8 /* CoreData.framework in Frameworks */,
+				7CE5D69FD26846E1A35FF24F /* libPods-test.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25A269FA1673A6D500E3EFA8 = {
+			isa = PBXGroup;
+			children = (
+				25A26A111673A6D500E3EFA8 /* RKKiwiExample */,
+				25A26A331673A6D500E3EFA8 /* RKKiwiExampleTests */,
+				25A26A081673A6D500E3EFA8 /* Frameworks */,
+				25A26A061673A6D500E3EFA8 /* Products */,
+				5D9543E0748248D7B7933EFA /* Pods.xcconfig */,
+				E10A11652B6241488D96BEEC /* Pods-test.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		25A26A061673A6D500E3EFA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25A26A051673A6D500E3EFA8 /* RKKiwiExample.app */,
+				25A26A2B1673A6D500E3EFA8 /* RKKiwiExampleTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25A26A081673A6D500E3EFA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25A26A091673A6D500E3EFA8 /* UIKit.framework */,
+				25A26A0B1673A6D500E3EFA8 /* Foundation.framework */,
+				25A26A0D1673A6D500E3EFA8 /* CoreGraphics.framework */,
+				25A26A0F1673A6D500E3EFA8 /* CoreData.framework */,
+				25A26A2C1673A6D500E3EFA8 /* SenTestingKit.framework */,
+				D067EA4A261E4BA594F06516 /* libPods.a */,
+				C2EDBCAEAFD249BDB3291443 /* libPods-test.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25A26A111673A6D500E3EFA8 /* RKKiwiExample */ = {
+			isa = PBXGroup;
+			children = (
+				25A26A1A1673A6D500E3EFA8 /* RKKEAppDelegate.h */,
+				25A26A1B1673A6D500E3EFA8 /* RKKEAppDelegate.m */,
+				25A26A121673A6D500E3EFA8 /* Supporting Files */,
+				253371F21703DA5800496B3C /* RKKiwiExample.xcdatamodeld */,
+				253371FB1703DDB300496B3C /* Tag.h */,
+				253371FC1703DDB300496B3C /* Tag.m */,
+				253371F81703DDB200496B3C /* Contact.h */,
+				253371F91703DDB200496B3C /* Contact.m */,
+			);
+			path = RKKiwiExample;
+			sourceTree = "<group>";
+		};
+		25A26A121673A6D500E3EFA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25A26A131673A6D500E3EFA8 /* RKKiwiExample-Info.plist */,
+				25A26A141673A6D500E3EFA8 /* InfoPlist.strings */,
+				25A26A171673A6D500E3EFA8 /* main.m */,
+				25A26A191673A6D500E3EFA8 /* RKKiwiExample-Prefix.pch */,
+				25A26A1D1673A6D500E3EFA8 /* Default.png */,
+				25A26A1F1673A6D500E3EFA8 /* Default@2x.png */,
+				25A26A211673A6D500E3EFA8 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25A26A331673A6D500E3EFA8 /* RKKiwiExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				253371FE1703DFFE00496B3C /* contact.json */,
+				25A26A341673A6D500E3EFA8 /* Supporting Files */,
+				253371F61703DBAE00496B3C /* RKTestFactory+GGEAdditions.m */,
+				253372001703E01500496B3C /* ContactSpec.m */,
+			);
+			path = RKKiwiExampleTests;
+			sourceTree = "<group>";
+		};
+		25A26A341673A6D500E3EFA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25A26A351673A6D500E3EFA8 /* RKKiwiExampleTests-Info.plist */,
+				25A26A361673A6D500E3EFA8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25A26A041673A6D500E3EFA8 /* RKKiwiExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A26A3E1673A6D500E3EFA8 /* Build configuration list for PBXNativeTarget "RKKiwiExample" */;
+			buildPhases = (
+				25A26A011673A6D500E3EFA8 /* Sources */,
+				25A26A021673A6D500E3EFA8 /* Frameworks */,
+				25A26A031673A6D500E3EFA8 /* Resources */,
+				C162612958234ADCBAF0D780 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RKKiwiExample;
+			productName = RKKiwiExample;
+			productReference = 25A26A051673A6D500E3EFA8 /* RKKiwiExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		25A26A2A1673A6D500E3EFA8 /* RKKiwiExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A26A411673A6D500E3EFA8 /* Build configuration list for PBXNativeTarget "RKKiwiExampleTests" */;
+			buildPhases = (
+				25A26A261673A6D500E3EFA8 /* Sources */,
+				25A26A271673A6D500E3EFA8 /* Frameworks */,
+				25A26A281673A6D500E3EFA8 /* Resources */,
+				25A26A291673A6D500E3EFA8 /* ShellScript */,
+				B1A749876969428B9F366378 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25A26A321673A6D500E3EFA8 /* PBXTargetDependency */,
+			);
+			name = RKKiwiExampleTests;
+			productName = RKKiwiExampleTests;
+			productReference = 25A26A2B1673A6D500E3EFA8 /* RKKiwiExampleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25A269FC1673A6D500E3EFA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RKKE;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = RestKit;
+			};
+			buildConfigurationList = 25A269FF1673A6D500E3EFA8 /* Build configuration list for PBXProject "RKKiwiExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 25A269FA1673A6D500E3EFA8;
+			productRefGroup = 25A26A061673A6D500E3EFA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25A26A041673A6D500E3EFA8 /* RKKiwiExample */,
+				25A26A2A1673A6D500E3EFA8 /* RKKiwiExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25A26A031673A6D500E3EFA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A26A161673A6D500E3EFA8 /* InfoPlist.strings in Resources */,
+				25A26A1E1673A6D500E3EFA8 /* Default.png in Resources */,
+				25A26A201673A6D500E3EFA8 /* Default@2x.png in Resources */,
+				25A26A221673A6D500E3EFA8 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A26A281673A6D500E3EFA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A26A381673A6D500E3EFA8 /* InfoPlist.strings in Resources */,
+				253371FF1703DFFE00496B3C /* contact.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25A26A291673A6D500E3EFA8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		B1A749876969428B9F366378 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-test-resources.sh\"\n";
+		};
+		C162612958234ADCBAF0D780 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25A26A011673A6D500E3EFA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A26A181673A6D500E3EFA8 /* main.m in Sources */,
+				25A26A1C1673A6D500E3EFA8 /* RKKEAppDelegate.m in Sources */,
+				253371F41703DA5800496B3C /* RKKiwiExample.xcdatamodeld in Sources */,
+				253371FA1703DDB200496B3C /* Contact.m in Sources */,
+				253371FD1703DDB300496B3C /* Tag.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A26A261673A6D500E3EFA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				253371F71703DBAE00496B3C /* RKTestFactory+GGEAdditions.m in Sources */,
+				253372011703E01500496B3C /* ContactSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25A26A321673A6D500E3EFA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25A26A041673A6D500E3EFA8 /* RKKiwiExample */;
+			targetProxy = 25A26A311673A6D500E3EFA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		25A26A141673A6D500E3EFA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25A26A151673A6D500E3EFA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		25A26A361673A6D500E3EFA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25A26A371673A6D500E3EFA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25A26A3C1673A6D500E3EFA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		25A26A3D1673A6D500E3EFA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25A26A3F1673A6D500E3EFA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D9543E0748248D7B7933EFA /* Pods.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RKKiwiExample/RKKiwiExample-Prefix.pch";
+				INFOPLIST_FILE = "RKKiwiExample/RKKiwiExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		25A26A401673A6D500E3EFA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D9543E0748248D7B7933EFA /* Pods.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RKKiwiExample/RKKiwiExample-Prefix.pch";
+				INFOPLIST_FILE = "RKKiwiExample/RKKiwiExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		25A26A421673A6D500E3EFA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E10A11652B6241488D96BEEC /* Pods-test.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RKKiwiExample.app/RKKiwiExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RKKiwiExample/RKKiwiExample-Prefix.pch";
+				INFOPLIST_FILE = "RKKiwiExampleTests/RKKiwiExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		25A26A431673A6D500E3EFA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E10A11652B6241488D96BEEC /* Pods-test.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RKKiwiExample.app/RKKiwiExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RKKiwiExample/RKKiwiExample-Prefix.pch";
+				INFOPLIST_FILE = "RKKiwiExampleTests/RKKiwiExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25A269FF1673A6D500E3EFA8 /* Build configuration list for PBXProject "RKKiwiExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A26A3C1673A6D500E3EFA8 /* Debug */,
+				25A26A3D1673A6D500E3EFA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A26A3E1673A6D500E3EFA8 /* Build configuration list for PBXNativeTarget "RKKiwiExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A26A3F1673A6D500E3EFA8 /* Debug */,
+				25A26A401673A6D500E3EFA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A26A411673A6D500E3EFA8 /* Build configuration list for PBXNativeTarget "RKKiwiExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A26A421673A6D500E3EFA8 /* Debug */,
+				25A26A431673A6D500E3EFA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		253371F21703DA5800496B3C /* RKKiwiExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				253371F31703DA5800496B3C /* RKKiwiExample.xcdatamodel */,
+			);
+			currentVersion = 253371F31703DA5800496B3C /* RKKiwiExample.xcdatamodel */;
+			path = RKKiwiExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 25A269FC1673A6D500E3EFA8 /* Project object */;
+}

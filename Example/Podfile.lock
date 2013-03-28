@@ -1,0 +1,38 @@
+PODS:
+  - AFNetworking (1.1.0)
+  - Kiwi (2.0.5)
+  - RestKit/Core (0.20.0):
+    - RestKit/CoreData
+    - RestKit/Network
+    - RestKit/ObjectMapping
+  - RestKit/CoreData (0.20.0)
+  - RestKit/Network (0.20.0):
+    - AFNetworking (= 1.1.0)
+    - RestKit/ObjectMapping
+    - RestKit/Support
+    - SOCKit
+  - RestKit/ObjectMapping (0.20.0)
+  - RestKit/Support (0.20.0)
+  - RestKit/Testing (0.20.0)
+  - RKKiwiMatchers (0.20.0):
+    - Kiwi (~> 2.0.0)
+  - SOCKit (1.1)
+
+DEPENDENCIES:
+  - Kiwi (~> 2.0.0)
+  - RestKit/Core (~> 0.20.0)
+  - RestKit/Testing (~> 0.20.0)
+  - RKKiwiMatchers (from `../`)
+
+EXTERNAL SOURCES:
+  RKKiwiMatchers:
+    :local: ../
+
+SPEC CHECKSUMS:
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  Kiwi: 89ade77eb49c889178cb2779e02514a7b9b9449e
+  RestKit: 580771664a14eaaa40bf53cf83584f12fc141930
+  RKKiwiMatchers: b2dfeacae98edc16fd380e7366816b31fbbc59ff
+  SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
+
+COCOAPODS: 0.17.0.rc4

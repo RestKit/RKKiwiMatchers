@@ -1,0 +1,10 @@
+platform :ios, '6.0'
+
+pod 'RestKit/Core', '~> 0.20.0'
+pod 'RestKit/Testing', '~> 0.20.0'
+
+target :test, :exclusive => true do
+  link_with 'RKKiwiExampleTests'
+  pod 'Kiwi', '~> 2.0.0'
+  pod 'RKKiwiMatchers', :local => '../'
+end

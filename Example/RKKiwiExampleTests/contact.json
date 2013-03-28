@@ -1,0 +1,10 @@
+{
+    "first_name": "Blake",
+    "last_name": "Watters",
+    "email_address": "blake@restkit.org",
+    "created_at": "2013-03-27T22:16:22-04:00",
+    "tags": [
+        "hacker",
+        "runner"
+    ]
+}

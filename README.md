@@ -3,6 +3,10 @@ RKKiwiMatchers
 
 This project provides a set of matchers for use in testing the RestKit framework via the Kiwi behavior driven development library.
 
+## Example App
+
+There is an example app available in the Example directory that can be helpful for referencing configuration and use.
+
 ## Installation
 
 Recommended installation is via Cocoapods:
@@ -36,7 +40,7 @@ registerMatchers(@"RK");
 context(@"when object mapping a GGAirline", ^{
     __block NSData *fixtureData;
     __block RKMappingTest *mappingTest;
-
+        
     beforeEach(^{
         RKManagedObjectStore *managedObjectStore = [RKManagedObjectStore defaultStore];
         fixtureData = [RKTestFixture parsedObjectWithContentsOfFixture:@"Fixtures/airlines/1.json"];
