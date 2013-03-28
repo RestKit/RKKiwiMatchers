@@ -24,14 +24,21 @@ Otherwise add all files in `Code` directory to your unit testing bundle target.
 ## Usage
 
 ``` objective-c
-#import "RKMappingTestMatcher.h"
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData.h>
+#import <RestKit/Testing.h>
+#import <RKKiwiMatchers/RKKiwiMatchers.h>
 
 SPEC_BEGIN(GGMappingsSpec)
 
 registerMatchers(@"RK");
 
 context(@"when object mapping a GGAirline", ^{
+    __block NSData *fixtureData;
+    __block RKMappingTest *mappingTest;
+
     beforeEach(^{
+        RKManagedObjectStore *managedObjectStore = [RKManagedObjectStore defaultStore];
         fixtureData = [RKTestFixture parsedObjectWithContentsOfFixture:@"Fixtures/airlines/1.json"];
         mappingTest = [RKMappingTest testForMapping:[mappings airlineResponseMapping] sourceObject:fixtureData destinationObject:nil];
         mappingTest.mappingOperationDataSource = [[RKManagedObjectMappingOperationDataSource alloc] initWithManagedObjectContext:managedObjectStore.persistentStoreManagedObjectContext cache:nil];
