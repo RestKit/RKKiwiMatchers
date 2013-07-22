@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   #s.dependency 'RestKit/Testing', '>= 0.20.0'
   s.dependency 'Kiwi', '>= 2.0.0'
   
-  # Add Core Data to the PCH (This should be optional, but there's no good way to configure this with CocoaPods at the moment)
+  # Add Core Data to the PCH if RestKit/CoreData has been imported
   s.prefix_header_contents = <<-EOS
 #ifdef COCOAPODS_POD_AVAILABLE_RestKit_CoreData
     #import <CoreData/CoreData.h>
