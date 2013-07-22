@@ -19,7 +19,10 @@
 //
 
 #import "RKMappingTestMatcher.h"
+
+#ifdef _COREDATADEFINES_H
 #import "RKConnectionTestExpectation.h"
+#endif
 
 @interface RKMappingTestMatcher ()
 @property (nonatomic, strong) NSError *error;

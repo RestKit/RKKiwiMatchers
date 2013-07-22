@@ -24,8 +24,8 @@ Pod::Spec.new do |s|
   
   # Add Core Data to the PCH (This should be optional, but there's no good way to configure this with CocoaPods at the moment)
   s.prefix_header_contents = <<-EOS
-#ifdef __OBJC__
-#import <CoreData/CoreData.h>
-#endif /* __OBJC__*/
+#ifdef COCOAPODS_POD_AVAILABLE_RestKit_CoreData
+    #import <CoreData/CoreData.h>
+#endif
 EOS
 end
